@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    font-family:
+        Arial,
+        "Noto Sans KR",
+        sans-serif;
+}
+
+
+/* =========================
+   화면에 보이는 영역
+   ========================= */
+
+.map-viewport {
+    width: 100vw;
+    height: 100vh;
+
+    overflow: auto;
+
+    background: #ffffff;
+
+    /*
+        모바일에서는 손가락으로
+        상하좌우 이동 가능
+    */
+    touch-action: pan-x pan-y;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+}
+
+.map-viewport::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   실제 지하철 노선도 크기
+   ========================= */
+
+.map-container {
+    width: 1420px;
+    height: 1030px;
+
+    min-width: 1420px;
+    min-height: 1030px;
+
+    background: white;
+}
+
+
+/* SVG */
+
+.subway-map {
+    width: 1420px;
+    height: 1030px;
+
+    display: block;
+}
+
+
+/* =========================
+   노선 공통
+   ========================= */
+
+.line {
+    fill: none;
+
+    stroke-width: 6;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* 1호선 */
+
+.line-1 {
+    stroke: #00a84d;
+}
+
+
+/* 2호선 */
+
+.line-2 {
+    stroke: #002b6f;
+}
+
+
+/* 3호선 */
+
+.line-3 {
+    stroke: #873630;
+}
+
+
+/* 4호선 */
+
+.line-4 {
+    stroke: #ff1818;
+}
+
+
+/* 5호선 */
+
+.line-5 {
+    stroke: #4b83bb;
+}
+
+
+/* 6호선 */
+
+.line-6 {
+    stroke: #ffb800;
+}
+
+
+/* 7호선 */
+
+.line-7 {
+    stroke: #7ec35a;
+}
+
+
+/* 8호선 */
+
+.line-8 {
+    stroke: #00aee8;
+}
+
+
+/* 9호선 */
+
+.line-9 {
+    stroke: #65358d;
+}
+
+
+/* =========================
+   역
+   ========================= */
+
+.station {
+    cursor: pointer;
+}
+
+
+/* 역 동그라미 */
+
+circle.station {
+    fill: #dce5eb;
+
+    stroke: #111;
+
+    stroke-width: 1;
+}
+
+
+/* 마우스를 올렸을 때 */
+
+circle.station:hover {
+    fill: #ffffff;
+
+    stroke-width: 3;
+
+    r: 15;
+}
+
+
+/* =========================
+   역 이름
+   ========================= */
+
+.station-label {
+    fill: #111;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    user-select: none;
+
+    pointer-events: none;
+}
+
+
+/* 왼쪽 */
+
+.label-left {
+    text-anchor: end;
+}
+
+
+/* 오른쪽 */
+
+.label-right {
+    text-anchor: start;
+}
+
+
+/* 위 */
+
+.label-top {
+    text-anchor: middle;
+}
+
+
+/* 아래 */
+
+.label-bottom {
+    text-anchor: middle;
+}

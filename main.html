@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>지하철 길찾기</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="map-viewport">
+
+    <div class="map-container">
+
+        <svg
+            class="subway-map"
+            viewBox="0 0 1420 1030"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+
+            <!-- ====================== -->
+            <!-- 노선 -->
+            <!-- ====================== -->
+
+            <!-- 1호선 / 초록 -->
+            <path
+                class="line line-1"
+                d="
+                M 60 510
+                V 890
+                C 60 935 80 965 110 965
+                H 790
+                C 830 965 860 925 860 885
+                V 595
+                C 860 510 825 460 755 460
+                H 140
+                C 95 460 60 480 60 510
+                "
+            />
+
+            <!-- 2호선 / 남색 -->
+            <path
+                class="line line-2"
+                d="
+                M 60 510
+                V 65
+                H 1360
+                "
+            />
+
+            <!-- 3호선 / 갈색 -->
+            <path
+                class="line line-3"
+                d="
+                M 210 65
+                V 965
+                "
+            />
+
+            <!-- 4호선 / 빨강 -->
+            <path
+                class="line line-4"
+                d="
+                M 60 790
+                H 1195
+                V 65
+                "
+            />
+
+            <!-- 5호선 -->
+            <path
+                class="line line-5"
+                d="
+                M 370 65
+                V 965
+                "
+            />
+
+            <!-- 6호선 / 노랑 -->
+            <path
+                class="line line-6"
+                d="
+                M 480 300
+                V 585
+
+                C 480 635 525 668 585 668
+
+                H 1295
+
+                C 1330 668 1360 635 1360 595
+
+                V 225
+
+                C 1360 185 1320 160 1270 160
+
+                H 585
+
+                C 520 160 480 210 480 265
+
+                V 300
+                "
+            />
+
+            <!-- 7호선 / 연두 -->
+            <path
+                class="line line-7"
+                d="
+                M 60 300
+                H 1360
+                "
+            />
+
+            <!-- 8호선 / 하늘색 -->
+            <path
+                class="line line-8"
+                d="
+                M 1010 65
+                V 965
+                H 812
+                "
+            />
+
+            <!-- 9호선 / 보라 -->
+            <path
+                class="line line-9"
+                d="
+                M 690 65
+                V 965
+                "
+            />
+
+
+            <!-- ====================== -->
+            <!-- 1xx -->
+            <!-- ====================== -->
+
+            <circle class="station" data-station="101" cx="60" cy="510" r="12"/>
+            <text class="station-label label-left" data-station="101" x="40" y="516">101</text>
+
+            <circle class="station" data-station="102" cx="60" cy="600" r="12"/>
+            <text class="station-label label-left" data-station="102" x="40" y="606">102</text>
+
+            <circle class="station" data-station="103" cx="60" cy="700" r="12"/>
+            <text class="station-label label-left" data-station="103" x="40" y="706">103</text>
+
+            <circle class="station" data-station="104" cx="60" cy="790" r="12"/>
+            <text class="station-label label-left" data-station="104" x="40" y="796">104</text>
+
+            <circle class="station" data-station="105" cx="60" cy="892" r="12"/>
+            <text class="station-label label-left" data-station="105" x="40" y="898">105</text>
+
+            <circle class="station" data-station="106" cx="105" cy="965" r="12"/>
+            <text class="station-label label-bottom" data-station="106" x="105" y="1000">106</text>
+
+            <circle class="station" data-station="107" cx="210" cy="965" r="12"/>
+            <text class="station-label label-bottom" data-station="107" x="210" y="1000">107</text>
+
+            <circle class="station" data-station="108" cx="292" cy="965" r="12"/>
+            <text class="station-label label-bottom" data-station="108" x="292" y="1000">108</text>
+
+            <circle class="station" data-station="109" cx="370" cy="965" r="12"/>
+            <text class="station-label label-bottom" data-station="109" x="370" y="1000">109</text>
+
+            <circle class="station" data-station="110" cx="474" cy="965" r="12"/>
+            <text class="station-label label-bottom" data-station="110" x="474" y="1000">110</text>
+
+            <circle class="station" data-station="111" cx="582" cy="965" r="12"/>
+            <text class="station-label label-bottom" data-station="111" x="582" y="1000">111</text>
+
+            <circle class="station" data-station="112" cx="690" cy="965" r="12"/>
+            <text class="station-label label-bottom" data-station="112" x="690" y="1000">112</text>
+
+            <circle class="station" data-station="113" cx="812" cy="965" r="12"/>
+            <text class="station-label label-bottom" data-station="113" x="812" y="1000">113</text>
+
+            <circle class="station" data-station="114" cx="860" cy="880" r="12"/>
+            <text class="station-label label-right" data-station="114" x="880" y="886">114</text>
+
+            <circle class="station" data-station="115" cx="860" cy="790" r="12"/>
+            <text class="station-label label-right" data-station="115" x="870" y="820">115</text>
+
+            <circle class="station" data-station="116" cx="860" cy="668" r="12"/>
+            <text class="station-label label-right" data-station="116" x="870" y="700">116</text>
+
+            <circle class="station" data-station="117" cx="860" cy="595" r="12"/>
+            <text class="station-label label-right" data-station="117" x="880" y="601">117</text>
+
+            <circle class="station" data-station="118" cx="835" cy="495" r="12"/>
+            <text class="station-label label-right" data-station="118" x="855" y="501">118</text>
+
+            <circle class="station" data-station="119" cx="690" cy="460" r="12"/>
+            <text class="station-label label-right" data-station="119" x="710" y="490">119</text>
+
+            <circle class="station" data-station="120" cx="582" cy="460" r="12"/>
+            <text class="station-label label-bottom" data-station="120" x="582" y="495">120</text>
+
+            <circle class="station" data-station="121" cx="480" cy="460" r="12"/>
+            <text class="station-label label-bottom" data-station="121" x="450" y="495">121</text>
+
+            <circle class="station" data-station="122" cx="370" cy="460" r="12"/>
+            <text class="station-label label-left" data-station="122" x="350" y="486">122</text>
+
+            <circle class="station" data-station="123" cx="210" cy="460" r="12"/>
+            <text class="station-label label-left" data-station="123" x="190" y="486">123</text>
+
+
+            <!-- ====================== -->
+            <!-- 2xx -->
+            <!-- ====================== -->
+
+            <circle class="station" data-station="201" cx="60" cy="380" r="12"/>
+            <text class="station-label label-left" data-station="201" x="40" y="386">201</text>
+
+            <circle class="station" data-station="202" cx="60" cy="300" r="12"/>
+            <text class="station-label label-left" data-station="202" x="40" y="306">202</text>
+
+            <circle class="station" data-station="203" cx="60" cy="220" r="12"/>
+            <text class="station-label label-left" data-station="203" x="40" y="226">203</text>
+
+            <circle class="station" data-station="204" cx="60" cy="140" r="12"/>
+            <text class="station-label label-left" data-station="204" x="40" y="146">204</text>
+
+            <circle class="station" data-station="205" cx="60" cy="65" r="12"/>
+            <text class="station-label label-left" data-station="205" x="40" y="71">205</text>
+
+            <circle class="station" data-station="206" cx="135" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="206" x="135" y="41">206</text>
+
+            <circle class="station" data-station="207" cx="210" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="207" x="210" y="41">207</text>
+
+            <circle class="station" data-station="208" cx="290" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="208" x="290" y="41">208</text>
+
+            <circle class="station" data-station="209" cx="370" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="209" x="370" y="41">209</text>
+
+            <circle class="station" data-station="210" cx="474" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="210" x="474" y="41">210</text>
+
+            <circle class="station" data-station="211" cx="690" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="211" x="690" y="41">211</text>
+
+            <circle class="station" data-station="212" cx="790" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="212" x="790" y="41">212</text>
+
+            <circle class="station" data-station="213" cx="908" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="213" x="908" y="41">213</text>
+
+            <circle class="station" data-station="214" cx="1010" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="214" x="1010" y="41">214</text>
+
+            <circle class="station" data-station="215" cx="1105" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="215" x="1105" y="41">215</text>
+
+            <circle class="station" data-station="216" cx="1195" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="216" x="1195" y="41">216</text>
+
+            <circle class="station" data-station="217" cx="1360" cy="65" r="12"/>
+            <text class="station-label label-top" data-station="217" x="1360" y="41">217</text>
+
+
+            <!-- ====================== -->
+            <!-- 3xx -->
+            <!-- ====================== -->
+
+            <circle class="station" data-station="301" cx="210" cy="140" r="12"/>
+            <text class="station-label label-left" data-station="301" x="190" y="146">301</text>
+
+            <circle class="station" data-station="302" cx="210" cy="220" r="12"/>
+            <text class="station-label label-left" data-station="302" x="190" y="226">302</text>
+
+            <circle class="station" data-station="303" cx="210" cy="300" r="12"/>
+            <text class="station-label label-left" data-station="303" x="190" y="326">303</text>
+
+            <circle class="station" data-station="304" cx="210" cy="380" r="12"/>
+            <text class="station-label label-left" data-station="304" x="190" y="386">304</text>
+
+            <circle class="station" data-station="305" cx="210" cy="600" r="12"/>
+            <text class="station-label label-left" data-station="305" x="190" y="606">305</text>
+
+            <circle class="station" data-station="306" cx="210" cy="700" r="12"/>
+            <text class="station-label label-left" data-station="306" x="190" y="706">306</text>
+
+            <circle class="station" data-station="307" cx="210" cy="790" r="12"/>
+            <text class="station-label label-left" data-station="307" x="195" y="825">307</text>
+
+            <circle class="station" data-station="308" cx="210" cy="892" r="12"/>
+            <text class="station-label label-left" data-station="308" x="190" y="898">308</text>
+
+
+            <!-- ====================== -->
+            <!-- 4xx -->
+            <!-- ====================== -->
+
+            <circle class="station" data-station="401" cx="135" cy="790" r="12"/>
+            <text class="station-label label-bottom" data-station="401" x="135" y="825">401</text>
+
+            <circle class="station" data-station="402" cx="290" cy="790" r="12"/>
+            <text class="station-label label-bottom" data-station="402" x="290" y="825">402</text>
+
+            <circle class="station" data-station="403" cx="370" cy="790" r="12"/>
+            <text class="station-label label-bottom" data-station="403" x="335" y="825">403</text>
+
+            <circle class="station" data-station="404" cx="474" cy="790" r="12"/>
+            <text class="station-label label-bottom" data-station="404" x="474" y="825">404</text>
+
+            <circle class="station" data-station="405" cx="582" cy="790" r="12"/>
+            <text class="station-label label-bottom" data-station="405" x="582" y="825">405</text>
+
+            <circle class="station" data-station="406" cx="690" cy="790" r="12"/>
+            <text class="station-label label-left" data-station="406" x="670" y="825">406</text>
+
+            <circle class="station" data-station="407" cx="775" cy="790" r="12"/>
+            <text class="station-label label-bottom" data-station="407" x="775" y="825">407</text>
+
+            <circle class="station" data-station="408" cx="928" cy="790" r="12"/>
+            <text class="station-label label-bottom" data-station="408" x="928" y="825">408</text>
+
+            <circle class="station" data-station="409" cx="1010" cy="790" r="12"/>
+            <text class="station-label label-bottom" data-station="409" x="1035" y="824">409</text>
+
+            <circle class="station" data-station="410" cx="1106" cy="790" r="12"/>
+            <text class="station-label label-bottom" data-station="410" x="1106" y="825">410</text>
+
+            <circle class="station" data-station="411" cx="1195" cy="790" r="12"/>
+            <text class="station-label label-bottom" data-station="411" x="1195" y="825">411</text>
+
+            <circle class="station" data-station="412" cx="1195" cy="668" r="12"/>
+            <text class="station-label label-right" data-station="412" x="1212" y="700">412</text>
+
+            <circle class="station" data-station="413" cx="1195" cy="595" r="12"/>
+            <text class="station-label label-right" data-station="413" x="1215" y="601">413</text>
+
+            <circle class="station" data-station="414" cx="1195" cy="485" r="12"/>
+            <text class="station-label label-right" data-station="414" x="1215" y="491">414</text>
+
+            <circle class="station" data-station="415" cx="1195" cy="380" r="12"/>
+            <text class="station-label label-right" data-station="415" x="1215" y="386">415</text>
+
+            <circle class="station" data-station="416" cx="1195" cy="300" r="12"/>
+            <text class="station-label label-right" data-station="416" x="1215" y="285">416</text>
+
+            <circle class="station" data-station="417" cx="1195" cy="160" r="12"/>
+            <text class="station-label label-right" data-station="417" x="1205" y="195">417</text>
+
+
+            <!-- ====================== -->
+            <!-- 5xx -->
+            <!-- ====================== -->
+
+            <circle class="station" data-station="501" cx="370" cy="140" r="12"/>
+            <text class="station-label label-left" data-station="501" x="350" y="146">501</text>
+
+            <circle class="station" data-station="502" cx="370" cy="220" r="12"/>
+            <text class="station-label label-left" data-station="502" x="350" y="226">502</text>
+
+            <circle class="station" data-station="503" cx="370" cy="300" r="12"/>
+            <text class="station-label label-left" data-station="503" x="350" y="326">503</text>
+
+            <circle class="station" data-station="504" cx="370" cy="380" r="12"/>
+            <text class="station-label label-left" data-station="504" x="350" y="386">504</text>
+
+            <circle class="station" data-station="505" cx="370" cy="600" r="12"/>
+            <text class="station-label label-left" data-station="505" x="350" y="606">505</text>
+
+            <circle class="station" data-station="506" cx="370" cy="700" r="12"/>
+            <text class="station-label label-left" data-station="506" x="350" y="706">506</text>
+
+            <circle class="station" data-station="507" cx="370" cy="892" r="12"/>
+            <text class="station-label label-left" data-station="507" x="350" y="898">507</text>
+
+
+            <!-- ====================== -->
+            <!-- 6xx -->
+            <!-- ====================== -->
+
+            <circle class="station" data-station="601" cx="480" cy="300" r="12"/>
+            <text class="station-label label-left" data-station="601" x="460" y="326">601</text>
+
+            <circle class="station" data-station="602" cx="480" cy="380" r="12"/>
+            <text class="station-label label-left" data-station="602" x="460" y="386">602</text>
+
+            <circle class="station" data-station="603" cx="480" cy="595" r="12"/>
+            <text class="station-label label-left" data-station="603" x="460" y="601">603</text>
+
+            <circle class="station" data-station="604" cx="585" cy="668" r="12"/>
+            <text class="station-label label-bottom" data-station="604" x="585" y="703">604</text>
+
+            <circle class="station" data-station="605" cx="690" cy="668" r="12"/>
+            <text class="station-label label-right" data-station="605" x="705" y="703">605</text>
+
+            <circle class="station" data-station="606" cx="773" cy="668" r="12"/>
+            <text class="station-label label-bottom" data-station="606" x="773" y="703">606</text>
+
+            <circle class="station" data-station="607" cx="928" cy="668" r="12"/>
+            <text class="station-label label-bottom" data-station="607" x="928" y="703">607</text>
+
+            <circle class="station" data-station="608" cx="1010" cy="668" r="12"/>
+            <text class="station-label label-right" data-station="608" x="1030" y="695">608</text>
+
+            <circle class="station" data-station="609" cx="1106" cy="668" r="12"/>
+            <text class="station-label label-bottom" data-station="609" x="1106" y="703">609</text>
+
+            <circle class="station" data-station="610" cx="1298" cy="668" r="12"/>
+            <text class="station-label label-bottom" data-station="610" x="1298" y="703">610</text>
+
+            <circle class="station" data-station="611" cx="1360" cy="595" r="12"/>
+            <text class="station-label label-right" data-station="611" x="1380" y="601">611</text>
+
+            <circle class="station" data-station="612" cx="1360" cy="485" r="12"/>
+            <text class="station-label label-right" data-station="612" x="1380" y="491">612</text>
+
+            <circle class="station" data-station="613" cx="1360" cy="380" r="12"/>
+            <text class="station-label label-right" data-station="613" x="1380" y="386">613</text>
+
+            <circle class="station" data-station="614" cx="1360" cy="300" r="12"/>
+            <text class="station-label label-right" data-station="614" x="1380" y="306">614</text>
+
+            <circle class="station" data-station="615" cx="1360" cy="225" r="12"/>
+            <text class="station-label label-right" data-station="615" x="1380" y="231">615</text>
+
+            <circle class="station" data-station="616" cx="1270" cy="160" r="12"/>
+            <text class="station-label label-bottom" data-station="616" x="1270" y="195">616</text>
+
+            <circle class="station" data-station="617" cx="1105" cy="160" r="12"/>
+            <text class="station-label label-bottom" data-station="617" x="1105" y="195">617</text>
+
+            <circle class="station" data-station="618" cx="1010" cy="160" r="12"/>
+            <text class="station-label label-right" data-station="618" x="1025" y="195">618</text>
+
+            <circle class="station" data-station="619" cx="908" cy="160" r="12"/>
+            <text class="station-label label-bottom" data-station="619" x="908" y="195">619</text>
+
+            <circle class="station" data-station="620" cx="790" cy="160" r="12"/>
+            <text class="station-label label-bottom" data-station="620" x="790" y="195">620</text>
+
+            <circle class="station" data-station="621" cx="690" cy="160" r="12"/>
+            <text class="station-label label-right" data-station="621" x="650" y="195">621</text>
+
+            <circle class="station" data-station="622" cx="582" cy="160" r="12"/>
+            <text class="station-label label-bottom" data-station="622" x="582" y="195">622</text>
+
+
+            <!-- ====================== -->
+            <!-- 7xx -->
+            <!-- ====================== -->
+
+            <circle class="station" data-station="701" cx="582" cy="300" r="12"/>
+            <text class="station-label label-bottom" data-station="701" x="582" y="335">701</text>
+
+            <circle class="station" data-station="702" cx="690" cy="300" r="12"/>
+            <text class="station-label label-right" data-station="702" x="705" y="330">702</text>
+
+            <circle class="station" data-station="703" cx="790" cy="300" r="12"/>
+            <text class="station-label label-bottom" data-station="703" x="790" y="335">703</text>
+
+            <circle class="station" data-station="704" cx="908" cy="300" r="12"/>
+            <text class="station-label label-bottom" data-station="704" x="908" y="335">704</text>
+
+            <circle class="station" data-station="705" cx="1010" cy="300" r="12"/>
+            <text class="station-label label-right" data-station="705" x="1030" y="285">705</text>
+
+            <circle class="station" data-station="706" cx="1106" cy="300" r="12"/>
+            <text class="station-label label-bottom" data-station="706" x="1106" y="335">706</text>
+
+            <circle class="station" data-station="707" cx="1276" cy="300" r="12"/>
+            <text class="station-label label-bottom" data-station="707" x="1276" y="335">707</text>
+
+
+            <!-- ====================== -->
+            <!-- 8xx -->
+            <!-- ====================== -->
+
+            <circle class="station" data-station="801" cx="922" cy="965" r="12"/>
+            <text class="station-label label-bottom" data-station="801" x="922" y="1000">801</text>
+
+            <circle class="station" data-station="802" cx="1010" cy="965" r="12"/>
+            <text class="station-label label-bottom" data-station="802" x="1010" y="1000">802</text>
+
+            <circle class="station" data-station="803" cx="1010" cy="880" r="12"/>
+            <text class="station-label label-right" data-station="803" x="1030" y="886">803</text>
+
+            <circle class="station" data-station="804" cx="1010" cy="595" r="12"/>
+            <text class="station-label label-right" data-station="804" x="1030" y="601">804</text>
+
+            <circle class="station" data-station="805" cx="1010" cy="485" r="12"/>
+            <text class="station-label label-right" data-station="805" x="1030" y="491">805</text>
+
+            <circle class="station" data-station="806" cx="1010" cy="380" r="12"/>
+            <text class="station-label label-right" data-station="806" x="1030" y="386">806</text>
+
+
+            <!-- ====================== -->
+            <!-- 9xx -->
+            <!-- ====================== -->
+
+            <circle class="station" data-station="901" cx="690" cy="880" r="12"/>
+            <text class="station-label label-right" data-station="901" x="710" y="886">901</text>
+
+            <circle class="station" data-station="902" cx="690" cy="595" r="12"/>
+            <text class="station-label label-right" data-station="902" x="710" y="601">902</text>
+
+            <circle class="station" data-station="903" cx="690" cy="380" r="12"/>
+            <text class="station-label label-right" data-station="903" x="710" y="386">903</text>
+
+            <circle class="station" data-station="904" cx="690" cy="230" r="12"/>
+            <text class="station-label label-right" data-station="904" x="710" y="236">904</text>
+
+        </svg>
+
+    </div>
+
+</div>
+
+</body>
+</html>
