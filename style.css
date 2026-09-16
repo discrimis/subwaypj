@@ -77,7 +77,7 @@ body {
 .line {
     fill: none;
 
-    stroke-width: 6;
+    stroke-width: 10;
 
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -159,22 +159,26 @@ body {
 /* 역 동그라미 */
 
 circle.station {
-    fill: #dce5eb;
-
-    stroke: #111;
-
-    stroke-width: 1;
+    fill: #ffffff;
+    stroke: none;
 }
 
 
 /* 마우스를 올렸을 때 */
 
 circle.station:hover {
+    r: 5;
+}
+
+/* 환승역: 흰 캡슐 안에 호선별 색상 표시 */
+.interchange-outline {
     fill: #ffffff;
+    stroke: #111111;
+    stroke-width: 2;
+}
 
+.interchange:hover .interchange-outline {
     stroke-width: 3;
-
-    r: 15;
 }
 
 
